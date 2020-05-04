@@ -3,6 +3,41 @@
  */
 
 /**
+ * Created by ilazycoder on 06/01/2020.
+ */
+
+export function monthName(month) {
+  let monthName
+
+  if (month === 1) {
+    monthName = 'Jan'
+  } else if (month === 2) {
+    monthName = 'Feb'
+  } else if (month === 3) {
+    monthName = 'Mar'
+  } else if (month === 4) {
+    monthName = 'Apr'
+  } else if (month === 5) {
+    monthName = 'May'
+  } else if (month === 6) {
+    monthName = 'Jun'
+  } else if (month === 7) {
+    monthName = 'Jul'
+  } else if (month === 8) {
+    monthName = 'Aug'
+  } else if (month === 9) {
+    monthName = 'Sep'
+  } else if (month === 10) {
+    monthName = 'Oct'
+  } else if (month === 11) {
+    monthName = 'Nov'
+  } else {
+    monthName = 'Dec'
+  }
+  return monthName
+}
+
+/**
  * Parse the time to string
  * @param {(Object|string|number)} time
  * @param {string} cFormat
@@ -27,7 +62,7 @@ export function parseTime(time, cFormat) {
   }
   const formatObj = {
     y: date.getFullYear(),
-    m: date.getMonth() + 1,
+    m: monthName(date.getMonth() + 1),
     d: date.getDate(),
     h: date.getHours(),
     i: date.getMinutes(),
